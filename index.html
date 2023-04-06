@@ -7,11 +7,41 @@
     <title>Bilangan Genap </title>
 </head>
 <style>
-
+    .header {
+        display:flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    input, button, p {
+        height:10%;
+        color: azure;
+    }
+    button {
+        background-color: rgb(0, 238, 255);
+        padding: 16px;
+        font-size: 20px;
+        align-items: center;
+        display: flex;
+    }
+    .content {
+        height: 100%;
+        width: 650px;
+        background: radial-gradient(farthest-side ellipse at 10% 0, #333867 20%, #87dbf5);
+        border-radius: 25px;
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 </style>
 <body>
-    <div class="header" style="text-align:center;height:250px;width:100%;font-family: 'Courier New', Courier, monospace; font-size:25px;";>
-        <input type="number" id="input1" placeholder="Masukkan Angka">
+    <div class="header" style="text-align:center;height:250px;font-family: 'Courier New', Courier, monospace; font-size:25px;";>
+        <div class="content">
+            <input type="number" id="input1" placeholder="Masukkan Angka" style="color:black;">
+            <button type="button" onclick="function1(document.getElementById('input1').value)">Generate</button><br>
+            <p>Hasil :<p id="hasil" style="border:1px solid grey; padding: 0 60px;"></p></p>
+        </div>
     </div>
 </body>
 <script src="app.js"></script>
