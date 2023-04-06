@@ -1,31 +1,37 @@
-// let input1=document.getElementById("input1");
-// console.log(input1);
-//   console.log(function1("5"));
-function function1(input1) {
-    // console.log(input1);
-    let result =[];
-
-    for(let i=0; i<input1.length; i++){
-        result.push(input1[i]);
+//    console.log(getResult("1"));
+getResult=(number) => {
+    let arrNum=[];
+    let result=0;
+    for(let i=1; i<=number; i++){
+        arrNum.push(i);
     }
-    let output=function2(result);
-    // console.log(output)
-    let hasil=document.getElementById("hasil");
-        hasil.innerHTML=output;
-    return hasil;
+    let oddNum=oddFinder(arrNum);
+    for(let i=0; i<oddNum.length; i++){
+        result+=oddNum[i]
+    }
+    if(oddNum.length==0){
+        oddNum="Bilangan genap tidak ada";
+    }
+    if(arrNum.length==0) {
+        arrNum="Angka Harus lebih besar dari 0"
+    }
+    document.getElementById("arrNum").innerHTML=arrNum;
+    document.getElementById("oddNum").innerHTML=oddNum;
+    document.getElementById("sumOdd").innerHTML=result;
+    
+     console.log(result, oddNum, arrNum)
+     return;
 }
 
 
-function function2(input2) {
-    // console.log(input2)
+oddFinder=(number) => {
+    let result=[];
     let temp=0;
-    for (let i=0; i<input2.length; i++) {
-        temp+=parseInt(input2[i]);
+    for (let i=0; i<number.length; i++) {
+        temp=parseInt(number[i]);
+        if (temp%2===0){
+            result.push(temp);
+        }
     }
-    // console.log(temp);
-    if (temp%2===0){
-        return "Genap";
-    } else {
-        return "Ganjil";
-    }
+     return result;
 }

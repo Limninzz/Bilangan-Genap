@@ -7,40 +7,102 @@
     <title>Bilangan Genap </title>
 </head>
 <style>
+    body {
+        color:azure;
+    }
     .header {
         display:flex;
         justify-content: center;
         align-content: center;
         align-items: center;
+        text-align:center;
+        height:500px;
+        font-family: 'Courier New', Courier, monospace; 
+        font-size:25px;
     }
-    input, button, p {
-        height:10%;
-        color: azure;
+    input, button {
+        font-size: 45px;
+        font-size: 45px;
+        text-align: center;
+        border-radius:5px;
+    }
+    #input1 {
+        margin: 0 15px 0 0;
+        color:black;
     }
     button {
+        position: relative;
         background-color: rgb(0, 238, 255);
-        padding: 16px;
-        font-size: 20px;
+        display: flex;
+        color:grey;
+        cursor: pointer;
+        box-shadow: 0 7px #127694;
+    }
+    button:active {
+        box-shadow: none;
+        position: relative;
+        top:7px;
+    }
+    .content, .generate {
         align-items: center;
+    }
+    .generate, .output {
         display: flex;
     }
     .content {
         height: 100%;
-        width: 650px;
-        background: radial-gradient(farthest-side ellipse at 10% 0, #333867 20%, #87dbf5);
+        width: 1200px;
+        background: radial-gradient(farthest-side ellipse at 20% 0, #333867 20%, #0a4d61, #127694, #09b6eb );
         border-radius: 25px;
+    }
+    .generate {
         flex-direction: row;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: center;
+    }
+    .output p { 
+        text-align: start;
+        padding-left:35px;
+    }
+    .value p {
+        border:2px solid cyan;
+        border-radius: 10px;
+        margin-right: 40px;
+        width:85%
+    }
+    #animate {
+        transition: 3s;
+    }
+    #animate:hover {
+        /* transform: rotate(360deg); */
+        color:firebrick;
     }
 </style>
 <body>
-    <div class="header" style="text-align:center;height:250px;font-family: 'Courier New', Courier, monospace; font-size:25px;";>
+    
+    <div class="header">
         <div class="content">
-            <input type="number" id="input1" placeholder="Masukkan Angka" style="color:black;">
-            <button type="button" onclick="function1(document.getElementById('input1').value)">Generate</button><br>
-            <p>Hasil :<p id="hasil" style="border:1px solid grey; padding: 0 60px;"></p></p>
+            <h1>Penjumlahan Bilangan <span id="animate">Genap</span></h1>
+            <div class="generate">
+                <input type="number" id="number" placeholder="Masukkan Angka" required>
+                <button type="button" onclick="getResult(document.getElementById('number').value)">Generate</button>
+            </div>
+            <div class="output">
+                <div>
+                    <p style="padding-bottom:10px;">Bentuk Array</p>
+                    <p>Bilangan Genap</p>
+                    <p>Jumlah Bilangan genap</p>
+                </div>
+                <div>
+                    <p style="padding-bottom:5px">:</p>
+                    <p style="padding-bottom:5px">:</p>
+                    <p>:</p>
+                </div>
+                <div class="value">
+                    <p id="arrNum">Hasil dalam bentuk array</p>
+                    <p id="oddNum">Angka Genap yang terdeteksi</p>
+                    <p id="sumOdd">Hasil Penjumlahan Angka Genap</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
